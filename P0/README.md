@@ -8,3 +8,5 @@ Esta es otra línea
 *************************
 
 ** ¡Mi tercer cambio! **
+
+![](Ejercicio2-img1.gif)
