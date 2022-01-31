@@ -1,6 +1,0 @@
-Ejercicio 1: a) Crea los ficheros de texto
-prueba4.txt desde el VSCode.
-(Mete en cada uno de ellos un texto
-cualquiera, de la longitud que quieras)
-
-** Este es el fichero de prueba: prueba4.txt **
