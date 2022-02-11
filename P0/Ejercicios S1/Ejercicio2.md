@@ -4,7 +4,6 @@ Este arbol representa la estructura del tipo de documento universidad, que está
 
 
     a) Escribe el documento en SGML que representa esa estructura
-```
 
 <!DOCTYPE universidad SYSTEM "universidad.dtd">
 <Universidad>
@@ -23,7 +22,6 @@ Este arbol representa la estructura del tipo de documento universidad, que está
         </Grado>
     </Escuela>
 </Universidad>
-´´´
 
     b) ¿Cuántos elementos contenedores hay? Indica sus nombres
 Hay 11 elementos contenedores (contienen otros elementos en su interior) y son:

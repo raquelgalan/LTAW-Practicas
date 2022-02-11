@@ -1,5 +1,5 @@
 Ejercicio 1
-```
+
 
 <!DOCTYPE urjc_ML SYSTEM "urjc_ml.dtd">
 <urjc_ml>
@@ -16,7 +16,8 @@ Ejercicio 1
     </escuela>
   </campus>
 </urjc_ml>
-´´´
+
+
 
     a) Explica para qué sirve la primera línea del documento y por qué es necesaria
 La primera línea tiene la etiqueta especial DOCTYPE (definida en SGML) que sirve para indicar el fichero donde está la definición del lenguaje usado (en este caso urjc-ml).
