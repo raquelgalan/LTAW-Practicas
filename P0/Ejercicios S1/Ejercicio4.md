@@ -20,8 +20,8 @@ Dado el siguiente documento escrito en markdown, dibuja:
 5. TinyFPGA
 
     a) Su diagrama de contenedores
-
+![](ejercicio4a.png)
 
     b) Su estructura en árbol
+![](ejercicio4b.png)
 
-    
