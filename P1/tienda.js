@@ -13,23 +13,37 @@ const mime = {
     'css'  : 'text/css', /* Hoja de estilo */
     'jpeg'  : 'image/jpeg', /* Imagen en formato jpeg */
     'png'  : 'image/png', /* Imagen en formato png */
+
  };
 
 //-- Mensaje de arranque
 console.log("Arrancando el servidor...");
-
-//-- Activar el servidor: ¡Que empiece la fiesta!
-server.listen(PUERTO);
 
 //-- Crear el servidor. Por cada petición se imprime mensaje.
 const server = http.createServer((req, res) => {
 
     //-- Indicamos que se ha recibido una petición
     console.log("Petición recibida!");
-  });
+
+    //-- Cabecera que indica el tipo de datos del
+    //-- cuerpo de la respuesta: Texto plano
+    res.setHeader('Content-Type', 'text/plain');
+    
+    //-- Mensaje del cuerpo
+    res.write("Soy una tienda on-line con mucho arte!\n");
+    
+    //-- Terminar la respuesta y enviarla
+    res.end();
+
+});
+
+
+//-- Activar el servidor: ¡Que empiece la fiesta!
+server.listen(PUERTO);
+
 
 //-- Mensaje de inicio del servidor
-console.log("!. Escuchando en puerto: " + PUERTO);
+console.log("Web artística!. Escuchando en el puerto: " + PUERTO);
 
 /* recurso principal index.html
 al menos 3 productos => producto1.html, producto2.html y producto3.html// producto1.css, producto2.css y producto3.css
