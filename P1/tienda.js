@@ -17,6 +17,7 @@ const mime = {
     'css'  : 'text/css', /* Hoja de estilo */
     'jpeg'  : 'image/jpeg', /* Imagen en formato jpeg */
     'png'  : 'image/png', /* Imagen en formato png */
+    "ico"  : "image/x-icon", /* Icono favicon */
  };
 
 //-- Crear el sevidor
@@ -45,6 +46,7 @@ const server = http.createServer(function (req, res) {
     //-- Para devolver info sobre el archivo  
     fs.stat(filename, error => {    
         if (!error) {    
+            //-- Lectura asíncrona
             fs.readFile(filename, (error, page) => {
                 //-- Petición 200 OK
                 res.writeHead(200, {'Content-Type': mime});
@@ -56,10 +58,11 @@ const server = http.createServer(function (req, res) {
         }else{
             //-- 404 ERROR
             console.log("404 ERROR");
+            //-- Lectura asíncrona
             fs.readFile(PAG_ERR,(error,page) => {
-                res.writeHead(404, {'Content-Type': 'text/html'});
-                res.write(page);    
-                return res.end();
+                res.writeHead(404, {'Content-Type': mime});
+                res.write(page);
+                res.end();    
             });
         }; 
     });
