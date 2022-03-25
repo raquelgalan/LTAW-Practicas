@@ -15,9 +15,10 @@ const PAG_ERR ='error.html';
 const mime = {
     'html' : 'text/html', /* Texto HTML */
     'css'  : 'text/css', /* Hoja de estilo */
-    'jpeg'  : 'image/jpeg', /* Imagen en formato jpeg */
+    'jpeg' : 'image/jpeg', /* Imagen en formato jpeg */
     'png'  : 'image/png', /* Imagen en formato png */
-    "ico"  : "image/x-icon", /* Icono favicon */
+    'ico'  : 'image/x-icon', /* Icono favicon */
+    'gif'  :  'image/gif', /* Gifs */
  };
 
 //-- Crear el sevidor
@@ -32,16 +33,18 @@ const server = http.createServer(function (req, res) {
 
     //-- Cabecera que indica el tipo de datos del
     //-- cuerpo de la respuesta: Texto plano
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', mime);
 
     //-- Cargar en el fichero mi tienda
     let filename = "";
 
-    //-- Si está vacía la url o es tienda.html
-    if (myURL.pathname == '/')
-      filename += PAGINA;
-    if (myURL.pathname == '/tienda.html')
-      filename += PAGINA;
+    //-- Se obtiene el fichero
+    if (myURL.pathname == '/') {
+        filename += PAGINA;
+    }else{
+        filename += myURL.pathname.substr(1); 
+    }    
+
 
     //-- Para devolver info sobre el archivo  
     fs.stat(filename, error => {    
