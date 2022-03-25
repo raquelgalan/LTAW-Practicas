@@ -7,7 +7,9 @@
 body{
 	overflow-x: hidden;
 	overflow-y: auto;
-    font-family: 'Comic Sans', fantasy;
+    font-family: "Comic Sans";
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .animationload {
@@ -21,12 +23,14 @@ body{
 }
 .manualidades, .figuras, .pulseras{
     display: inline;
-	float: left;
-	border-radius: 0px 0px 0px 0px;
-	margin: 30px 30px 30px 110px;
+
 	text-align: center;
     margin-top: 60px;
+    background-image:url(wiki/fondo.jpeg);
     background-color:#fff;
+    margin: 50px 100px 100px 100px;
+    border-width: 3px;
+    border-radius: 60px;  
 
 }
 
@@ -43,8 +47,9 @@ body{
     font-style: italic;
 }
 #home .large-header {
-	background-image: url("wiki/pattern.png"),url('wiki/fondo_cuadros.jpeg');
-	background-position: center;
+
+    background-image: url('wiki/fondo.jpeg');
+	background-size: cover;
 }
 
 /* LOGO */
@@ -59,6 +64,53 @@ body{
 	transform: translate3d(-50%,-50%,0);
 }
 
+#productos{
+    text-align:center;
+    background-image:url(wiki/fondo_cuadros.jpeg);
+    margin: 50px 100px 100px 100px;
+    border-width: 3px;
+    border-radius: 60px;  
+    vertical-align: top;
+    margin: 10px
+}
+
+#Lienzos{
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 60px;
+    margin: 30px 20px 30px 20px;
+}
+
+#Lienzos:hover {
+    border:rgb(123, 173, 230) 5px solid;
+    border-radius: 60px;
+}
+
+#Figuras{
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 60px;
+    margin: 30px 20px 30px 20px;
+}
+
+#Figuras:hover {
+    border:rgb(123, 173, 230) 5px solid;
+    border-radius: 60px;
+}
+
+#Manualidades{
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 60px;
+    margin: 30px 20px 30px 20px;
+}
+
+#Manualidades:hover {
+    border:rgb(123, 173, 230) 5px solid;
+    border-radius: 60px;
+}
+
+
 /* -----------------------------------------------------------------------
    ESTILO DEL FONDO
 ------------------------------------------------------------------------- */
@@ -70,7 +122,7 @@ body{
     color: #fff;
 }
 #features{
-    background:url("wiki/pattern.png"),url("wiki/fondo_cuadros.jpeg");
+    background:url("wiki/pattern.png"), ("fondo_cuadros.jpeg");
 }
 
 /*-------------------------------------------------------------------
