@@ -5,7 +5,6 @@
 =============================================== */
 
 body{
-	overflow-x: hidden;
 	overflow-y: auto;
     font-family: "Comic Sans";
     font-weight: bold;
@@ -18,22 +17,9 @@ body{
     left:0;
     right:0;
     bottom:0;
-    background-color:#fff;
+    background-color:rgb(255, 255, 255);
     z-index:999999;
 }
-.manualidades, .figuras, .pulseras{
-    display: inline;
-
-	text-align: center;
-    margin-top: 60px;
-    background-image:url(wiki/fondo.jpeg);
-    background-color:#fff;
-    margin: 50px 100px 100px 100px;
-    border-width: 3px;
-    border-radius: 60px;  
-
-}
-
 /* -----------------------------------------------------------------------
    FONDO EN MOVIMIENTO
 ------------------------------------------------------------------------- */
@@ -47,8 +33,7 @@ body{
     font-style: italic;
 }
 #home .large-header {
-
-    background-image: url('wiki/fondo.jpeg');
+    background-image: url('wiki/fondo1.jpg');
 	background-size: cover;
 }
 
@@ -64,50 +49,49 @@ body{
 	transform: translate3d(-50%,-50%,0);
 }
 
-#productos{
+.productos{
     text-align:center;
-    background-image:url(wiki/fondo_cuadros.jpeg);
-    margin: 50px 100px 100px 100px;
+    background-image:url(wiki/fondo3.jpg);
+    margin: 5px 60px 60px 80px;
     border-width: 3px;
-    border-radius: 60px;  
-    vertical-align: top;
-    margin: 10px
+    border-radius: 30px;
+    background-size: cover;
+    justify-content: space-between;
+    display: flex;
+    height: 1000px;
 }
 
 #Lienzos{
     border-style: solid;
-    border-width: 3px;
-    border-radius: 60px;
-    margin: 30px 20px 30px 20px;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 20px 20px 40px;
 }
 
 #Lienzos:hover {
     border:rgb(123, 173, 230) 5px solid;
-    border-radius: 60px;
 }
 
 #Figuras{
     border-style: solid;
-    border-width: 3px;
-    border-radius: 60px;
-    margin: 30px 20px 30px 20px;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 20px 20px 40px;
 }
 
 #Figuras:hover {
     border:rgb(123, 173, 230) 5px solid;
-    border-radius: 60px;
 }
 
 #Manualidades{
     border-style: solid;
-    border-width: 3px;
-    border-radius: 60px;
-    margin: 30px 20px 30px 20px;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 80px 20px 40px;
 }
 
 #Manualidades:hover {
     border:rgb(123, 173, 230) 5px solid;
-    border-radius: 60px;
 }
 
 
@@ -116,10 +100,10 @@ body{
 ------------------------------------------------------------------------- */
 
 .features{
-    padding: 120px 0px 600px 0px;
+    padding: 40px 0px 5px 0px;
 }   
 .features h4{
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 #features{
     background:url("wiki/pattern.png"), ("fondo_cuadros.jpeg");
@@ -131,7 +115,8 @@ body{
 
 .footer{
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
+    
 }
 .copyright{
     text-align: center;
