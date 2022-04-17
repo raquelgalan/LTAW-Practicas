@@ -17,21 +17,12 @@ body{
     left:0;
     right:0;
     bottom:0;
-    background-color:rgb(255, 255, 255);
+    background-color:#fff;
     z-index:999999;
 }
 /* -----------------------------------------------------------------------
    FONDO EN MOVIMIENTO
 ------------------------------------------------------------------------- */
-
-.logo{
-    padding-bottom: 5%;
-}
-.logo p{
-    color: #ffffff;
-    padding-top: 20px;
-    font-style: italic;
-}
 #home .large-header {
     background-image: url('wiki/fondo1.jpg');
 	background-size: cover;
@@ -94,7 +85,6 @@ body{
     border:rgb(123, 173, 230) 5px solid;
 }
 
-
 /* -----------------------------------------------------------------------
    ESTILO DEL FONDO
 ------------------------------------------------------------------------- */
@@ -102,13 +92,6 @@ body{
 .features{
     padding: 40px 0px 5px 0px;
 }   
-.features h4{
-    color: rgb(255, 255, 255);
-}
-#features{
-    background:url("wiki/pattern.png"), ("fondo_cuadros.jpeg");
-}
-
 /*-------------------------------------------------------------------
     PIE DE PÁGINA
 -------------------------------------------------------------------*/
