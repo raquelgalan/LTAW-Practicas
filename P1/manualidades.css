@@ -43,28 +43,32 @@ body{
 
 .productos{
     text-align:center;
-    background-image:url(wiki/fondo10.jpg);
+    background-image:url(wiki/fondo_manualidades.jpg);
     background-size: cover;
 
+    margin: 5px 60px 60px 60px;
+
+    border-width: 3px;
+    border-radius: 30px;
+
+    justify-content: space-between;
+    height: 1200px;
 }
 
-#producto1{
-    margin-left: 400px;
-    display: inline-block;
-    text-align: center;
+
+.producto1:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
-
-#producto2{
-    margin-left: 600px;
-    display: inline-block;
-    text-align: center;
+.producto2:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
-#producto3{
-    margin-left: 400px;
-    display: inline-block;
-    text-align: center;
+.producto3:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
 
@@ -96,12 +100,6 @@ body{
     background-color:rgba(255, 255, 255, 0.493);
     margin: 5px 500px 5px 500px;
     border-width: 3px;
-    border-radius: 60px;
-}
-
-.h3:hover {
-    border:rgb(123, 173, 230) 5px solid;
-    background: #8cc7e9;
     border-radius: 60px;
 }
 

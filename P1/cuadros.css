@@ -43,35 +43,36 @@ body{
 
 .productos{
     text-align:center;
-    background-image:url(wiki/fondo10.jpg);
+    background-image:url(wiki/fondo2.jpg);
     background-size: cover;
 
+    margin: 5px 60px 60px 60px;
+
+    border-width: 3px;
+    border-radius: 30px;
+
+    justify-content: space-between;
+    height: 1600px;
 }
 
-#producto1{
-    margin-left: 400px;
-    display: inline-block;
-    text-align: center;
+.producto1:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
-
-#producto2{
-    margin-left: 600px;
-    display: inline-block;
-    text-align: center;
+.producto2:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
-#producto3{
-    margin-left: 400px;
-    display: inline-block;
-    text-align: center;
+.producto3:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
-#producto4{
-    margin-left: 600px;
-    display: inline-block;
-    text-align: center;
-
+.producto4:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
 }
 
 #Barra{
@@ -94,7 +95,6 @@ body{
     margin: 1px 500px 5px 500px;
     border-width: 100px;
     border-radius: 100px;
-
 }
 
 .h3{
