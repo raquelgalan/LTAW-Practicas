@@ -18,16 +18,23 @@
 <body>
   <h2>Chat</h2>
     <p id="pantalla">
+
+        <div id="rellenar_nickname">
+            <h4>Nickname:</h4>
+            <input type="text" placeholder="Escribe tu nickname..." size="40" style="height:25px" autocomplete="off" id="apodo">
+            
+            <button type="button_nickname" id="button_nickname">Enviar</button>
+        </div>
+
         <h3>Mensajes recibidos:</h3>
 
         <div class="screen">
             <p id="display"></p>
         </div>
         <div class="barra">
-            <input type="text" placeholder="Escribe un mensaje..." size="80" style="height:30px" autocomplete="off" id="msg_entry">
+            <input type="text" placeholder="Escribe un mensaje..." size="80" style="height:50px" autocomplete="off" id="msg_entry">
             
             <button type="button" id="button">Enviar</button>
-            
 
         </div>
     </p>   

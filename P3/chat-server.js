@@ -73,7 +73,7 @@ io.on('connect', (socket) => {
         console.log('** CONEXIÓN TERMINADA **'.yellow);
         Contador -= 1;
         // Mensaje para todos los usuarios
-        io.send('> Un usuario ha dejado el chat');
+        io.send("> Un usuario ha dejado el chat");
     });
 
 });

@@ -33,29 +33,73 @@ h3 {
   font-size: 30px;
   margin-left: 250px;
   margin-right: 250px;
-}  
+}
+
+h4 {
+    color: rgb(0, 0, 0);
+    font-family: 'shorelines';;
+    font-size: 20px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
 
 body {
     background-image: url(wiki/fondo.jpg);
     background-size: cover;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 50px;
     font-family: 'tasty';
     font-size: 20px;
 }
 
+#rellenar_nickname{
+    border: solid 5px;
+    border-color: rgba(228, 138, 21, 0.4);
+    background-color: rgba(98, 154, 172, 0.472);
+    font-family: 'tasty';
+    font-weight: bold;
+    width: 500px;
+    height: 130px;
+    margin-left: 380px;
+    margin-right: 380px;
+    overflow: auto;
+    text-align: center;
+    padding-top: 5px;
+}
 
+#msg_nickname{
+    height: 50px;
+    width: 360px; 
+    text-align: center;
+    font-family: 'comic';
+    color:rgb(34, 54, 212);
+}
+
+button_nickname {
+    background-color: #ffff;
+    color: #a85;
+    border-color: #a85;
+    border-width: 3px;
+    font-family: 'comic';
+}
+
+button_nickname:hover {
+    background-color: #ffff;
+    color: #a85;
+    border-color: rgb(83, 110, 186);
+    border-width: 3px;
+}
 
 #display{
     border: solid 5px;
-    border-color: rgba(228, 138, 21, 0.4);
-    background-color: rgba(255, 255, 255, 0.695);
+    border-color:rgba(144, 87, 13, 0.4);
+    background-color: rgba(255, 255, 255, 0.467);
     font-family: 'tasty';
     font-weight: bold;
     width: 700px;
     height: 300px;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 280px;
+    margin-right: 280px;
     overflow: auto;
     text-align: center;
 }
@@ -74,14 +118,14 @@ button {
     border-color: #a85;
     border-width: 3px;
     font-family: 'comic';
-  }
+}
 
 button:hover {
     background-color: #ffff;
     color: #a85;
     border-color: rgb(83, 110, 186);
     border-width: 3px;
-  }
+}
 
 /*-------------------------------------------------------------------
     PIE DE PÁGINA
@@ -91,15 +135,15 @@ button:hover {
     text-align: center;
     padding-bottom: 100px;
     font-family: 'comic';
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 300px;
+    margin-right: 300px;
     font-size: 15px;
 }
 .copyright{
     text-align: center;
     padding-top: 10px;
     font-family: 'comic';
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 300px;
+    margin-right: 300px;
     font-size: 15px;
 }  
