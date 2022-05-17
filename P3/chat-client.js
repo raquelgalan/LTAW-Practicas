@@ -3,11 +3,12 @@
 //-- Elementos del interfaz
 const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
+const send = document.getElementById("send");
 
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
 
-
+//-- Mensaje recibido
 socket.on("message", (msg)=>{
   display.innerHTML += '<p style="color:blue">' + msg + '</p>';
 });
@@ -20,3 +21,5 @@ msg_entry.onchange = () => {
   //-- Borrar el mensaje actual
   msg_entry.value = "";
 }
+
+

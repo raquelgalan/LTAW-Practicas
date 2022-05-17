@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="chat.css">
-  <title>Práctica 3: Web Chat</title>
+  <link rel="icon" href="favicon.ico">
+  <title>Web Chat</title>
 
   <!-- Cargar la biblioteca Socket.IO. Nos la debe entregar el servidor -->
   <script src="/socket.io/socket.io.js"></script>
@@ -16,8 +17,25 @@
 
 <body>
   <h2>Chat</h2>
-  <input type="text" placeholder="Escribe aquí los mensajes..." autocomplete="off" id="msg_entry">
-  <h3>Mensajes recibidos</h3>
+  <input type="text" placeholder="Escribe un mensaje..." autocomplete="off" id="msg_entry">
+  <button type="button" id="button">Enviar</button>
+  <h3>Mensajes recibidos:</h3>
   <p id="display"></p>
+
+
 </body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center">  
+            <p>Chat realizado por Raquel Galán</p>
+            <a href="mailto:raquelgm1@msn.com">raquelgm1@msn.com</a>
+
+            <div class="row text-center">
+                <p class="copyright">Copyright© 2021 <a href="http://templatestock.co">Template Stock</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </html>
