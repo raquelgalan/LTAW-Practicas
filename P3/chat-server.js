@@ -20,10 +20,14 @@ const io = socket(server);
 //-- Contador de usuarios
 let Contador = 0;
 
+//-- Dirección del chat
+let path = __dirname + '/chat.html';
+
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
-  res.send('Bienvenido a mi aplicación Web!!!' + '<p><a href="/chat.html">Chat</a></p>');
+    res.sendFile(path);
+    console.log("Accediendo a: " + path);
 });
 
 //-- Esto es necesario para que el servidor le envíe al cliente la
@@ -39,9 +43,14 @@ io.on('connect', (socket) => {
 
     // Mensaje de Bienvenida al nuevo usuario
     socket.send('> ¡Bienvenido!');
+    socket.send('> Si quieres conocer los comandos especiales introduce: /help');
 
     // Mensaje para todos los usuarios avisando de que se ha conectado un nuevo usuario
-    io.send('> Nuevo usuario conectado');
+    if (Contador >= 2) {
+        io.send("> Nuevo usuario conectado. Hay " + Contador + " usuarios.");
+    }else{
+        io.send("> Nuevo usuario conectado. Hay " + Contador + " usuario.");
+    };
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
@@ -73,7 +82,11 @@ io.on('connect', (socket) => {
         console.log('** CONEXIÓN TERMINADA **'.yellow);
         Contador -= 1;
         // Mensaje para todos los usuarios
-        io.send("> Un usuario ha dejado el chat");
+        if (Contador >= 2) {
+            io.send("> Un usuario ha dejado el chat. Hay " + Contador + " usuarios.");
+        }else{
+            io.send("> Un usuario ha dejado el chat. Hay " + Contador + " usuario.");
+        };
     });
 
 });
