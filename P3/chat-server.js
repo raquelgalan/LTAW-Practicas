@@ -38,16 +38,16 @@ io.on('connect', (socket) => {
     Contador +=1; //-- Se incrementa contador
 
     // Mensaje de Bienvenida al nuevo usuario
-    socket.send('¡Bienvenido!');
+    socket.send('> ¡Bienvenido!');
 
     // Mensaje para todos los usuarios avisando de que se ha conectado un nuevo usuario
-    io.send('Nuevo usuario conectado');
+    io.send('> Nuevo usuario conectado');
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
         if (msg.startsWith("/")) {
             if(msg =='/help'){
-                socket.send("Comandos especiales:" + "<br>" +
+                socket.send("> Comandos especiales:" + "<br>" +
                 "/ list: Devolverá el número de usuarios conectados." + "<br>" +
                 " / hello: El servidor nos devolverá el saludo." + "<br>" +
                 " / date: Nos devolverá la fecha");
@@ -57,14 +57,14 @@ io.on('connect', (socket) => {
                 socket.send("¡Hola!");
             }else if (msg =='/date') {
                 let Fecha= new Date();
-                socket.send("La fecha de hoy es: " + Fecha);
+                socket.send("La fecha actual es: " + Fecha.toGMTString());
             }else{
                 socket.send("No es un comando especial, en /help tiene más información");
             }    
         }else{
             //-- Reenviarlo a todos los clientes conectados
             io.send(msg);
-            console.log("Mensaje Recibido!: " + msg.blue);
+            console.log("> Mensaje Recibido!: " + msg.blue);
         };
     });
 
@@ -73,7 +73,7 @@ io.on('connect', (socket) => {
         console.log('** CONEXIÓN TERMINADA **'.yellow);
         Contador -= 1;
         // Mensaje para todos los usuarios
-        io.send('Un usuario ha dejado el chat');
+        io.send('> Un usuario ha dejado el chat');
     });
 
 });
