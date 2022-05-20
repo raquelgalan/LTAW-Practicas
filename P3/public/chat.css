@@ -6,17 +6,17 @@
 
 @font-face {
     font-family: 'shorelines';
-    src: url(shorelines-script.ttf);
+    src: url(public/shorelines-script.ttf);
 }
 
 @font-face {
     font-family: 'tasty';
-    src: url(tasty-birds.ttf);
+    src: url(public/tasty-birds.ttf);
 }
 
 @font-face {
     font-family: 'comic';
-    src: url(COMIC.TTF);
+    src: url(public/COMIC.TTF);
 }
 
 h2 {

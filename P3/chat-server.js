@@ -21,7 +21,7 @@ const io = socket(server);
 let Contador = 0;
 
 //-- Dirección del chat
-let path = __dirname + '/chat.html';
+let path = __dirname + '/public/chat.html';
 
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
@@ -33,6 +33,9 @@ app.get('/', (req, res) => {
 //-- Esto es necesario para que el servidor le envíe al cliente la
 //-- biblioteca socket.io para el cliente
 app.use('/', express.static(__dirname +'/'));
+
+//-- El directorio publico contiene ficheros estáticos
+app.use(express.static('public'));
 
 //------------------- GESTION SOCKETS IO
 //-- Evento: Nueva conexion recibida
