@@ -6,6 +6,12 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 
+
+//-- Cargar el módulo de electron
+const electron = require('electron');
+
+console.log("Arrancando electron...");
+
 const PUERTO = 9090;
 
 //-- Crear una nueva aplicacion web
@@ -22,6 +28,10 @@ let Contador = 0;
 
 //-- Dirección del chat
 let path = __dirname + '/chat.html';
+
+//-- Variable para acceder a la ventana principal
+//-- Se pone aquí para que sea global al módulo principal
+let win = null;
 
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
@@ -95,3 +105,48 @@ io.on('connect', (socket) => {
 //-- ¡Que empiecen los juegos de los WebSockets!
 server.listen(PUERTO);
 console.log("Escuchando en puerto: " + PUERTO);
+
+
+//-- Punto de entrada. En cuanto electron está listo,
+//-- ejecuta esta función
+electron.app.on('ready', () => {
+    console.log("Evento Ready!");
+    
+    //-- Aquí se crea la ventana y se hace lo relacionado con la gui
+    //-- Pero el servidor no va aquí dentro, si no fuera, como en la práctica 3
+
+     //-- Crear la ventana principal de nuestra aplicación
+     win = new electron.BrowserWindow({
+        width: 600,   //-- Anchura 
+        height: 600,  //-- Altura
+
+        //-- Permitir que la ventana tenga ACCESO AL SISTEMA
+        webPreferences: {
+          nodeIntegration: true,
+          contextIsolation: false
+        }
+    });
+
+
+//-- Cargar interfaz gráfica en HTML
+win.loadFile("index.html");
+
+//-- Esperar a que la página se cargue y se muestre
+//-- y luego enviar el mensaje al proceso de renderizado para que 
+//-- lo saque por la interfaz gráfica
+win.on('ready-to-show', () => {
+  win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+});
+
+//-- Enviar un mensaje al proceso de renderizado para que lo saque
+//-- por la interfaz gráfica
+win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+
+});
+
+
+//-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
+//-- renderizado. Al recibirlos se escribe una cadena en la consola
+electron.ipcMain.handle('test', (event, msg) => {
+console.log("-> Mensaje: " + msg);
+});
