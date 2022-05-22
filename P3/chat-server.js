@@ -62,9 +62,9 @@ io.on('connect', (socket) => {
         if (msg_solo.startsWith("/")) {
             if(msg_solo =='/help'){
                 socket.send("> Comandos especiales:" + "<br>" +
-                "/ list: Devolverá el número de usuarios conectados." + "<br>" +
-                " / hello: El servidor nos devolverá el saludo." + "<br>" +
-                " / date: Nos devolverá la fecha");
+                "/list: Devolverá el número de usuarios conectados." + "<br>" +
+                " /hello: El servidor nos devolverá el saludo." + "<br>" +
+                " /date: Nos devolverá la fecha");
             }else if (msg_solo =='/list') {
                 socket.send("Hay " + Contador + " usuario/s" );
             }else if (msg_solo =='/hello') {
