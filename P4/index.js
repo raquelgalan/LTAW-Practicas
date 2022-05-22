@@ -18,13 +18,27 @@ info2.textContent = process.platform;
 info3.textContent = process.cwd();
 
 
+//-- Numero de usuarios
+electron.ipcRenderer.on('users', (event, message) => {
+    console.log("Recibido: " + message);
+    usuarios.textContent = message;
+});
+
+//-- Mensaje enviado al proceso MAIN
 btn_test.onclick = () => {
     display.innerHTML += "TEST! ";
     console.log("Botón apretado!");
 
     //-- Enviar mensaje al proceso principal
-    electron.ipcRenderer.invoke('test', "MENSAJE DE PRUEBA: Boton apretado");
+    electron.ipcRenderer.invoke('test', "> Probando, probando, 1, 2, 3...");
 }
+
+  //-- Mensajes de los clientes
+  electron.ipcRenderer.on('msg_client', (event, message) => {
+    console.log("Recibido: " + message);
+    display.innerHTML += message + "<br>";
+    display.scrollTop = message.scrollHeight;
+});
 
 //-- Mensaje recibido del proceso MAIN
 electron.ipcRenderer.on('print', (event, message) => {
