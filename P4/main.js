@@ -27,7 +27,7 @@ const io = socket(server);
 let Contador = 0;
 
 //-- Dirección del chat
-let path = __dirname + '/chat.html';
+let path = __dirname + '/public/chat.html';
 
 //-- Variable para acceder a la ventana principal
 //-- Se pone aquí para que sea global al módulo principal
@@ -64,17 +64,18 @@ io.on('connect', (socket) => {
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
-        if (msg.startsWith("/")) {
-            if(msg =='/help'){
+        msg_solo = msg.split(': ')[1];
+        if (msg_solo.startsWith("/")) {
+            if(msg_solo =='/help'){
                 socket.send("> Comandos especiales:" + "<br>" +
-                "/ list: Devolverá el número de usuarios conectados." + "<br>" +
-                " / hello: El servidor nos devolverá el saludo." + "<br>" +
-                " / date: Nos devolverá la fecha");
-            }else if (msg =='/list') {
+                "/list: Devolverá el número de usuarios conectados." + "<br>" +
+                " /hello: El servidor nos devolverá el saludo." + "<br>" +
+                " /date: Nos devolverá la fecha");
+            }else if (msg_solo =='/list') {
                 socket.send("Hay " + Contador + " usuario/s" );
-            }else if (msg =='/hello') {
+            }else if (msg_solo =='/hello') {
                 socket.send("¡Hola!");
-            }else if (msg =='/date') {
+            }else if (msg_solo =='/date') {
                 let Fecha= new Date();
                 socket.send("La fecha actual es: " + Fecha.toGMTString());
             }else{
@@ -112,13 +113,10 @@ console.log("Escuchando en puerto: " + PUERTO);
 electron.app.on('ready', () => {
     console.log("Evento Ready!");
     
-    //-- Aquí se crea la ventana y se hace lo relacionado con la gui
-    //-- Pero el servidor no va aquí dentro, si no fuera, como en la práctica 3
-
      //-- Crear la ventana principal de nuestra aplicación
      win = new electron.BrowserWindow({
-        width: 600,   //-- Anchura 
-        height: 600,  //-- Altura
+        width: 1000,   //-- Anchura 
+        height: 1000,  //-- Altura
 
         //-- Permitir que la ventana tenga ACCESO AL SISTEMA
         webPreferences: {
