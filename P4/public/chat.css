@@ -6,17 +6,17 @@
 
 @font-face {
     font-family: 'shorelines';
-    src: url(public/shorelines-script.ttf);
+    src: url(shorelines-script.ttf);
 }
 
 @font-face {
     font-family: 'tasty';
-    src: url(public/tasty-birds.ttf);
+    src: url(tasty-birds.ttf);
 }
 
 @font-face {
     font-family: 'comic';
-    src: url(public/COMIC.TTF);
+    src: url(COMIC.TTF);
 }
 
 h2 {
@@ -44,7 +44,7 @@ h4 {
 }
 
 body {
-    background-image: url(wiki/fondo.jpg);
+    background-image: url(/wiki/fondo.jpg);
     background-size: cover;
     text-align: center;
     margin-top: 50px;
