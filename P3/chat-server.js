@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 //-- Esto es necesario para que el servidor le envíe al cliente la
 //-- biblioteca socket.io para el cliente
-app.use('/', express.static(__dirname +'/'));
+app.use('/', express.static(__dirname + '/'));
 
 //-- El directorio publico contiene ficheros estáticos
 app.use(express.static('public'));
@@ -57,17 +57,19 @@ io.on('connect', (socket) => {
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
-        if (msg.startsWith("/")) {
-            if(msg =='/help'){
+        //-- Elimino la parte del nombre de usuario
+        msg_solo = msg.split(': ')[1];
+        if (msg_solo.startsWith("/")) {
+            if(msg_solo =='/help'){
                 socket.send("> Comandos especiales:" + "<br>" +
                 "/ list: Devolverá el número de usuarios conectados." + "<br>" +
                 " / hello: El servidor nos devolverá el saludo." + "<br>" +
                 " / date: Nos devolverá la fecha");
-            }else if (msg =='/list') {
+            }else if (msg_solo =='/list') {
                 socket.send("Hay " + Contador + " usuario/s" );
-            }else if (msg =='/hello') {
+            }else if (msg_solo =='/hello') {
                 socket.send("¡Hola!");
-            }else if (msg =='/date') {
+            }else if (msg_solo =='/date') {
                 let Fecha= new Date();
                 socket.send("La fecha actual es: " + Fecha.toGMTString());
             }else{
@@ -82,7 +84,7 @@ io.on('connect', (socket) => {
 
     //-- Evento de desconexión
     socket.on('disconnect', function(){
-        console.log('** CONEXIÓN TERMINADA **'.yellow);
+        console.log('** UN USUARIO SE HA DESCONECTADO **'.yellow);
         Contador -= 1;
         // Mensaje para todos los usuarios
         if (Contador >= 2) {
