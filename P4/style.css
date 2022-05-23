@@ -1,20 +1,143 @@
-h1 {
-    width: 93%;
-    padding: 20px;
-    background-color: lightgreen;
-    border-radius: 10px;
-    text-align: center;
-  }
+/* DOCUMENTO DE ESTILO */
 
-.blue {
-    color: blue;
+/* ==============================================
+    GENERAL
+=============================================== */
+
+@font-face {
+  font-family: 'shorelines';
+  src: url(public/shorelines-script.ttf);
 }
 
-.red {
-  color: red;
+@font-face {
+  font-family: 'tasty';
+  src: url(public/tasty-birds.ttf);
 }
 
-  #display {
-      border: 2px solid lightblue;
-      padding: 10px;
-  }
+@font-face {
+  font-family: 'comic';
+  src: url(public/COMIC.TTF);
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  font-family: 'tasty';
+  text-align: center;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  font-family: 'shorelines';;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body {
+  background-image: url(wiki/fondo_pintura.jpg);
+  background-size: cover;
+  font-weight: bold;
+}
+
+#left {
+  float:left;
+  width: 46%;
+  border-color:rgba(255, 254, 254, 0.783);
+  background-color: rgba(255, 255, 255, 0.467);
+  text-align: left;
+  height: 670px;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+#right {
+  float:right;
+  width: 46%;
+  border-color:rgba(255, 254, 254, 0.783);
+  background-color: rgba(255, 255, 255, 0.467);
+  text-align: left;
+  height: 670px;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+#info1,#info2, #info3, #info4, #info5, #info5, #info6 {
+  color: #042087;
+  font-size: 16px;
+  text-align: left;
+}
+
+button {
+  background-color: #ffff;
+  color: #a85;
+  border-color: #a85;
+  border-width: 3px;
+  font-family: 'comic';
+  position: center;
+  text-align: center;
+  margin-left: 40%;
+}
+
+button:hover {
+  background-color: #ffff;
+  color: #a85;
+  border-color: rgb(255, 255, 255);
+  border-width: 3px;
+  position: center;
+}
+
+#display{
+  border:rgb(255, 255, 255) 5px solid;
+  border-color:rgba(255, 254, 254, 0.783);
+  background-color: rgba(255, 255, 255, 0.467);
+  font-family: 'tasty';
+  font-weight: bold;
+  font-size: 25px;
+  overflow-y: scroll;
+  margin-left: 53px;
+  margin-right: 50px;
+  overflow: auto;
+  text-align: center;
+  padding: 10px;
+  width: 320px;
+  height: 300px;
+}
+
+/*-------------------------------------------------------------------
+    PIE DE PÁGINA
+-------------------------------------------------------------------*/
+.footer {
+  text-align: center;
+  font-family: 'comic';
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  margin-top: 75%;
+  border-color:rgba(255, 254, 254, 0.783);
+  background-color: rgba(255, 255, 255, 0.467);
+  height: 180px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.copyright {
+  text-align: center;
+  font-family: 'comic';
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  margin-left: 35%;
+}
