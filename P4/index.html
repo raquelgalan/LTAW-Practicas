@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Permitir sólo scripts y ficheros de la máquina local -->
+    <!-- Permitir sólo scripts y ficheros de la máquina local -->
     <!-- Con esto se elimina el aviso de seguridad: Insecure Content-Security-Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
 
@@ -17,7 +17,6 @@
 
     <title>Práctica 4: Mi APP de Chat con electron</title>
 
-  
 </head>
 
 <body>
@@ -30,14 +29,33 @@
             <li>Arquitectura: <span id="info1" class="blue"></span> </li>
             <li>Plataforma: <span id="info2" class="blue"></span></li>
             <li>Diretorio: <span id="info3" class="blue"></span></li>
+            <li>Versión de Node: <span id="info4" class="blue"></span></li>
+            <li>Versión de Chrome: <span id="info5" class="blue"></span></li>
+            <li>Versión de Electron: <span id="info6" class="blue"></span></li>
         </ul>
 
+        <hr>
+        <h2>Usuarios conectados:</h2>
+        <p id="users"></p>
+
+        <hr>
+        <h2>Dirección IP</h2>
+        <p id="dir_ip"></p>
+
+        </div>
+        <div id="right">
+            <h2>Pruebas  <span id='print' class="red"></span> </h2>
+            <button type="button" id="btn_test">Expecto Patronum</button> 
+            
+        <h2>Display</h2>
+            <p id="display"></p>
+        </div>
 
         <hr>
         <p>Mensajes enviados desde el proceso main:</p>
         <p>Print:  <span id='print' class="red"></span> </p>
         <p>   <input type="button" value="Test" id="btn_test"> </p>
-       <p>Display:</p>
+        <p>Display:</p>
         <p id="display"></p>
 
     </p>   
@@ -57,11 +75,3 @@
 
 </body>
 </html>
-
-
-
-
-
-    
-
-
