@@ -5,6 +5,7 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
+const dir_ip = require('ip');
 
 
 //-- Cargar el módulo de electron
@@ -44,12 +45,18 @@ app.get('/', (req, res) => {
 //-- biblioteca socket.io para el cliente
 app.use('/', express.static(__dirname +'/'));
 
+//-- El directorio publico contiene ficheros estáticos
+app.use(express.static('public'));
+
 //------------------- GESTION SOCKETS IO
 //-- Evento: Nueva conexion recibida
 io.on('connect', (socket) => {
   
     console.log('** NUEVO USUARIO CONECTADO **'.yellow);
-    Contador +=1; //-- Se incrementa contador
+    Contador +=1; //-- Se incrementa contador del número de usuarios
+
+    //-- Enviar el número de usuarios al renderer
+    win.webContents.send('usuarios', Contador);
 
     // Mensaje de Bienvenida al nuevo usuario
     socket.send('> ¡Bienvenido!');
@@ -61,6 +68,9 @@ io.on('connect', (socket) => {
     }else{
         io.send("> Nuevo usuario conectado. Hay " + Contador + " usuario.");
     };
+
+    //-- Enviar mensaje de conexión al renderer
+    win.webContents.send('msg_conex', "> Nuevo usuario conectado.");
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
@@ -91,13 +101,22 @@ io.on('connect', (socket) => {
     //-- Evento de desconexión
     socket.on('disconnect', function(){
         console.log('** CONEXIÓN TERMINADA **'.yellow);
+        //-- Restamos 1 al contador del número de usuarios
         Contador -= 1;
-        // Mensaje para todos los usuarios
+
+        //-- Enviar el número de usuarios al renderer
+        win.webContents.send('usuarios', Contador);
+
+        //-- Mensaje para todos los usuarios
         if (Contador >= 2) {
             io.send("> Un usuario ha dejado el chat. Hay " + Contador + " usuarios.");
         }else{
             io.send("> Un usuario ha dejado el chat. Hay " + Contador + " usuario.");
         };
+    
+        //-- Enviar mensaje de desconexión al renderer
+        win.webContents.send('msg_desconex', "> Un usuario se ha desconectado.");
+
     });
 
 });
@@ -133,7 +152,7 @@ electron.app.on('ready', () => {
     //-- y luego enviar el mensaje al proceso de renderizado para que 
     //-- lo saque por la interfaz gráfica
     win.on('ready-to-show', () => {
-    win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+    win.webContents.send("ip", "http://" + dir_ip.address() + ":" + PUERTO);
     });
 
 });
@@ -141,5 +160,6 @@ electron.app.on('ready', () => {
 //-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
 //-- renderizado. Al recibirlos se escribe una cadena en la consola
 electron.ipcMain.handle('test', (event, msg) => {
-console.log("-> Mensaje: " + msg);
+    io.send(msg);
+    console.log("-> Mensaje: " + msg);
 });

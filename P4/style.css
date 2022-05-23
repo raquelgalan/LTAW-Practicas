@@ -87,7 +87,7 @@ button {
   font-family: 'comic';
   position: center;
   text-align: center;
-  margin-left: 40%;
+  margin-left: 30%;
 }
 
 button:hover {
@@ -121,23 +121,23 @@ button:hover {
 .footer {
   text-align: center;
   font-family: 'comic';
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 250px;
+  margin-right: 250px;
   font-size: 15px;
   color: rgb(0, 0, 0);
   margin-top: 75%;
   border-color:rgba(255, 254, 254, 0.783);
-  background-color: rgba(255, 255, 255, 0.467);
-  height: 180px;
+  background-color: rgba(255, 255, 255, 0.603);
+  height: 145px;
   border-radius: 10px;
   padding: 10px;
 }
 .copyright {
   text-align: center;
   font-family: 'comic';
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 250px;
+  margin-right: 150px;
   font-size: 15px;
   color: rgb(0, 0, 0);
-  margin-left: 35%;
+  margin-left: 30%;
 }
