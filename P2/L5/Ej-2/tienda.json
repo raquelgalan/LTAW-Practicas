@@ -1,0 +1,62 @@
+
+    {
+        "productos": [
+            {
+                "nombre": "Mar",
+                "descripcion": "producto1",
+                "stock": "5"
+            },
+            {
+                "nombre": "Bailarinas",
+                "descripcion": "producto2",
+                "stock": "2"
+            },
+            {
+                "nombre": "Elefante",
+                "descripcion": "producto3",
+                "stock": "1"
+            }
+        ],
+    
+        "usuarios": [
+            {
+                "usuario": "root",
+                "email": "user@art.com"
+            },
+            {
+                "usuario": "picasso",
+                "email": "picasso@art.com"
+            }
+
+        ],
+
+         "pedidos": [
+            {   
+                "usuario": "root",
+                "tarjeta": 12345678,
+                "direccion": "Sin Nombre, Madrid",
+                "productos": [
+                                {
+                                    "producto": "Bailarinas",
+                                    "unidades": 1
+                                }
+                             ]
+            }, 
+            {   
+                "usuario": "picasso",
+                "tarjeta": 24242424,
+                "direccion": "Guernica, 24, Madrid",
+                "productos": [
+                                {
+                                    "producto": "Mar",
+                                    "unidades": 3
+                                },
+                                {
+                                    "producto": "Elefante",
+                                    "unidades": 1
+                                }
+                             ]
+            }
+
+         ]
+     }
