@@ -73,7 +73,7 @@ io.on('connect', (socket) => {
     };
 
     //-- Enviar mensaje de conexión al renderer
-    win.webContents.send('msg_conex', "> Nuevo usuario conectado.");
+    win.webContents.send('message', "> Nuevo usuario conectado.");
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
@@ -121,7 +121,7 @@ io.on('connect', (socket) => {
         };
     
         //-- Enviar mensaje de desconexión al renderer
-        win.webContents.send('msg_desconex', "> Un usuario se ha desconectado.");
+        win.webContents.send('message', "> Un usuario se ha desconectado.");
 
     });
 

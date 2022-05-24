@@ -35,27 +35,28 @@ electron.ipcRenderer.on('usuarios', (event, message) => {
 
 //-- Mensaje enviado al proceso MAIN
 btn_test.onclick = () => {
+    display.innerHTML += "> Testeo: Probando, probando, 1, 2, 3..."+ "<br>";
     console.log("Botón apretado!");
 
     //-- Enviar mensaje al proceso principal
-    electron.ipcRenderer.invoke('test', "> Probando, probando, 1, 2, 3...");
+    electron.ipcRenderer.invoke('test', "> Testeo: Probando, probando, 1, 2, 3...");
 }
 
   //-- Mensajes de los clientes
-  electron.ipcRenderer.on('msg_client', (event, message) => {
-    console.log("Recibido: " + message);
-    display.innerHTML += message + "<br>";
-    display.scrollTop = message.scrollHeight;
+  electron.ipcRenderer.on("message", (event, msg) => {
+    console.log("Recibido: " + msg);
+    display.innerHTML += msg + "<br>";
+    display.scrollTop = msg.scrollHeight;
 });
 
 //-- Mensaje recibido del proceso MAIN
-electron.ipcRenderer.on('print', (event, message) => {
-    console.log("Recibido: " + message);
-    print.textContent = message;
-    ip_dir.textContent = message;
+electron.ipcRenderer.on('print', (event, msg) => {
+    console.log("Recibido: " + msg);
+    print.textContent = msg;
+    ip_dir.textContent = msg;
 
-    electron.ipcRenderer.on('ip', (event, message) => {
-      console.log("Recibido: " + message);
-      ip_dir.textContent = message;
+    electron.ipcRenderer.on('ip', (event, msg) => {
+      console.log("Recibido: " + msg);
+      ip_dir.textContent = msg;
     })
 });
