@@ -73,10 +73,16 @@ body {
   margin-bottom: 15px;
 }
 
-#info1,#info2, #info3, #info4, #info5, #info5, #info6 {
+#info1,#info2, #info3, #info4, #info5, #info5, #info6{
   color: #042087;
   font-size: 16px;
   text-align: left;
+}
+
+#usuarios{
+  color: #042087;
+  font-size: 20px;
+  text-align: center;
 }
 
 button {

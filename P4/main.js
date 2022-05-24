@@ -5,7 +5,7 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
-const dir_ip = require('ip');
+const ip = require('ip');
 
 
 //-- Cargar el módulo de electron
@@ -33,6 +33,9 @@ let path = __dirname + '/public/chat.html';
 //-- Variable para acceder a la ventana principal
 //-- Se pone aquí para que sea global al módulo principal
 let win = null;
+
+//-- Obtener direccion IP
+dir_ip = ip.address();
 
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
@@ -74,6 +77,9 @@ io.on('connect', (socket) => {
 
     //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
     socket.on("message", (msg)=> {
+        //-- Enviar al renderer
+        win.webContents.send("message", msg);
+        //-- Se elimina la parte del nickname
         msg_solo = msg.split(': ')[1];
         if (msg_solo.startsWith("/")) {
             if(msg_solo =='/help'){
@@ -144,7 +150,6 @@ electron.app.on('ready', () => {
         }
     });
 
-
     //-- Cargar interfaz gráfica en HTML
     win.loadFile("index.html");
 
@@ -152,7 +157,7 @@ electron.app.on('ready', () => {
     //-- y luego enviar el mensaje al proceso de renderizado para que 
     //-- lo saque por la interfaz gráfica
     win.on('ready-to-show', () => {
-    win.webContents.send("ip", "http://" + dir_ip.address() + ":" + PUERTO);
+    win.webContents.send("ip", "http://" + ip.address() + ":" + PUERTO);
     });
 
 });
@@ -161,5 +166,5 @@ electron.app.on('ready', () => {
 //-- renderizado. Al recibirlos se escribe una cadena en la consola
 electron.ipcMain.handle('test', (event, msg) => {
     io.send(msg);
-    console.log("-> Mensaje: " + msg);
+    console.log("> Mensaje: " + msg);
 });
