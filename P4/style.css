@@ -79,6 +79,12 @@ body {
   text-align: left;
 }
 
+#ip_dir{
+  color: #042087;
+  font-size: 20px;
+  text-align: center;
+}
+
 #usuarios{
   color: #042087;
   font-size: 20px;

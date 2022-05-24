@@ -157,7 +157,7 @@ electron.app.on('ready', () => {
     //-- y luego enviar el mensaje al proceso de renderizado para que 
     //-- lo saque por la interfaz gráfica
     win.on('ready-to-show', () => {
-    win.webContents.send("ip", "http://" + ip.address() + ":" + PUERTO);
+        win.webContents.send('ip', 'http://' + ip.address() + ':' + PUERTO);
     });
 
 });

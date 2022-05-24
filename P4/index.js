@@ -50,13 +50,15 @@ btn_test.onclick = () => {
 });
 
 //-- Mensaje recibido del proceso MAIN
-electron.ipcRenderer.on('print', (event, msg) => {
-    console.log("Recibido: " + msg);
-    print.textContent = msg;
-    ip_dir.textContent = msg;
 
-    electron.ipcRenderer.on('ip', (event, msg) => {
-      console.log("Recibido: " + msg);
-      ip_dir.textContent = msg;
-    })
+electron.ipcRenderer.on('ip', (event, msg) => {
+  console.log("Recibido2: " + msg);
+  ip_dir.textContent = msg;
+  console.log("ip2: " + ip_dir.address());
+});
+
+electron.ipcRenderer.on('print', (event, msg) => {
+    console.log("Recibido1: " + msg);
+    print.textContent = msg;
+
 });
