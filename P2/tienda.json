@@ -1,0 +1,56 @@
+[
+    {"productos": [
+            {
+                "nombre":"Bailarinas",
+                "descripcion":"Lienzo pintado al óleo",
+                "precio":"100€",
+                "stock": "8"
+            },
+            {
+                "nombre":"El Mar",
+                "descripcion":"Mujer paseando por la playa",
+                "precio":"80",
+                "stock": "5"
+            },
+            {
+                "nombre": "Caballo",
+                "descripcion": "Precioso caballo blanco",
+                "precio":"50€",
+                "stock": "10"
+            }
+        ]},
+    
+        {"usuarios": [
+            {
+                "usuario":"Picasso",
+                "tipo":"root",
+                "nombre":"Pablo Picasso",
+                "password": "1881",
+                "email": "picasso@art.com"
+            },
+            {
+                "usuario":"Velázquez",
+                "tipo":"normal",
+                "nombre":"Diego Velázquez",
+                "password": "1599",
+                "email": "velazquez@artcom"
+            }
+
+        ]},
+
+        { "pedidos": [
+            {   
+                "usuario": "Picasso",
+                "direccion": "Guernica, Málaga",
+                "tarjeta": "25101881",
+                "compra":"Bailarinas, El Mar"
+            }, 
+            {   
+                "usuario": "Velázquez",
+                "direccion": "Las Meninas, Sevilla",
+                "tarjeta": "06061599",
+                "compra":"Caballo"
+            }
+
+    ]}
+]        

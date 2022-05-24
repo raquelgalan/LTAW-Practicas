@@ -1,0 +1,139 @@
+/* ESTILO DE LA PÁGINA DEL PRODUCTO 2 */
+
+/* ==============================================
+    GENERAL
+=============================================== */
+
+body{
+	overflow-y: auto;
+    font-family: "Comic Sans";
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.animationload {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff;
+    z-index:999999;
+}
+
+/* -----------------------------------------------------------------------
+   FONDO EN MOVIMIENTO
+------------------------------------------------------------------------- */
+#home .large-header {
+	background-image: url('wiki/fondo1.jpg');
+	background-size: cover;
+}
+
+/* LOGO */
+.home-main {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.productos{
+    text-align:center;
+    background-image:url(wiki/fondo5.jpg);
+    background-size: cover;
+
+    margin: 5px 60px 60px 60px;
+
+    border-width: 3px;
+    border-radius: 30px;
+
+    justify-content: space-between;
+    height: 1200px;
+}
+
+.producto1:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
+}
+
+.producto2:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
+}
+
+.producto3:hover {
+    border:rgb(106, 158, 221) 8px solid;
+    border-radius: 800px;
+}
+
+
+#Barra{
+    text-align:center;
+    background-color:rgba(97, 138, 226, 0.493);
+    margin: 20px 100px 20px 100px;
+    border-width: 3px;
+    border-radius: 60px;
+}
+
+#Inicio:hover {
+    border:rgb(123, 173, 230) 5px solid;
+    background: #8cc7e9;
+    border-radius: 60px;
+}
+
+#Figuras{
+    text-align:center;
+    background-color:rgba(97, 138, 226, 0.493);
+    margin: 1px 500px 5px 500px;
+    border-width: 100px;
+    border-radius: 100px;
+
+}
+
+.h3{
+    text-align:center;
+    background-color:rgba(255, 255, 255, 0.493);
+    margin: 5px 500px 5px 500px;
+    border-width: 3px;
+    border-radius: 60px;
+}
+
+.h3:hover {
+    border:rgb(123, 173, 230) 5px solid;
+    background: #8cc7e9;
+    border-radius: 60px;
+}
+
+p{
+    text-align:center;
+    color:rgb(0, 0, 0);
+    background-color:rgba(255, 255, 255, 0.493);
+    margin: 5px 500px 5px 500px;
+    border-width: 3px;
+    border-radius: 60px;
+}
+
+/* -----------------------------------------------------------------------
+   ESTILO DEL FONDO
+------------------------------------------------------------------------- */
+
+.features{
+    padding: 40px 0px 5px 0px;
+}   
+
+/*-------------------------------------------------------------------
+    PIE DE PÁGINA
+-------------------------------------------------------------------*/
+
+.footer{
+    text-align: center;
+    padding-bottom: 100px;
+}
+.copyright{
+    text-align: center;
+    padding-top: 10px;
+}

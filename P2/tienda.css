@@ -1,0 +1,107 @@
+/* ESTILO DE LA PÁGINA PRINCIPAL */
+
+/* ==============================================
+    GENERAL
+=============================================== */
+
+body{
+	overflow-y: auto;
+    font-family: "Comic Sans";
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.animationload {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff;
+    z-index:999999;
+}
+/* -----------------------------------------------------------------------
+   FONDO EN MOVIMIENTO
+------------------------------------------------------------------------- */
+#home .large-header {
+    background-image: url('wiki/fondo1.jpg');
+	background-size: cover;
+}
+
+/* LOGO */
+.home-main {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.productos{
+    text-align:center;
+    background-image:url(wiki/fondo3.jpg);
+    margin: 5px 60px 60px 80px;
+    border-width: 3px;
+    border-radius: 30px;
+    background-size: cover;
+    justify-content: space-between;
+    display: flex;
+    height: 1000px;
+}
+
+#Lienzos{
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 20px 20px 40px;
+}
+
+#Lienzos:hover {
+    border:rgb(123, 173, 230) 5px solid;
+}
+
+#Figuras{
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 20px 20px 40px;
+}
+
+#Figuras:hover {
+    border:rgb(123, 173, 230) 5px solid;
+}
+
+#Manualidades{
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 80px;
+    margin: 200px 80px 20px 40px;
+}
+
+#Manualidades:hover {
+    border:rgb(123, 173, 230) 5px solid;
+}
+
+/* -----------------------------------------------------------------------
+   ESTILO DEL FONDO
+------------------------------------------------------------------------- */
+
+.features{
+    padding: 40px 0px 5px 0px;
+}   
+/*-------------------------------------------------------------------
+    PIE DE PÁGINA
+-------------------------------------------------------------------*/
+
+.footer{
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+.copyright{
+    text-align: center;
+    padding-top: 10px;
+}
